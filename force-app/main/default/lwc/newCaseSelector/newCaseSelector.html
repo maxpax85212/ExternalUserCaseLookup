@@ -1,0 +1,20 @@
+<template>
+    <div class="wrapper">
+    <header class="header">Your Cases</header>
+    <section class="content">
+        <div class="columns">
+        <main class="main" >
+            <c-new-case-list recordids={recordIds} onrecordselected={handleRecordSelected}></c-new-case-list>
+        </main>
+        <aside class="sidebar-second">
+            <template lwc:if={selectedRecordId}>
+                <c-new-case-detail 
+                record-id={selectedRecordId}
+                submitter-email={submitterEmail}>
+                </c-new-case-detail>
+            </template>
+        </aside>
+        </div>
+    </section>
+    </div>
+</template>

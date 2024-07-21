@@ -1,0 +1,38 @@
+<template>
+    <div class="container">
+        <lightning-card  variant="Narrow" icon-name="standard:email">
+            <div slot="title">
+                <h1 class="slds-card__header-link slds-line-clamp_small">Email Message</h1>
+            </div>
+            <lightning-record-view-form
+            record-id={record.Id}
+            object-api-name="EmailMessage"
+            mode="readonly"
+        >
+                <div class="slds-theme_default fieldsDisplay">
+                    <span class="slds-form-element__label">From Address</span>
+                    <div class="slds-form-element__control">
+                      <div class="slds-form-element__static">{record.FromAddress}</div>
+                    </div>
+                    <br>
+                    <span class="slds-form-element__label">To Address</span>
+                    <div class="slds-form-element__control">
+                      <div class="slds-form-element__static">{record.ToAddress}</div>
+                    </div>
+                    <br>
+                    <span class="slds-form-element__label">Sent On</span>
+                    <div class="slds-form-element__control">
+                      <div class="slds-form-element__static">
+                        <lightning-formatted-date-time value={record.CreatedDate} year="numeric" month="numeric" day="numeric" hour="2-digit"
+                        minute="2-digit" time-zone-name="short"></lightning-formatted-date-time></div>
+                    </div>
+                    <br>
+                    <span class="slds-form-element__label">Email Body</span>
+                    <div class="slds-form-element__control">
+                      <div class="slds-form-element__static">{TextBodyValue}</div>
+                    </div>
+                </div>
+            </lightning-record-view-form>
+        </lightning-card>
+    </div>
+</template>

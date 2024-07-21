@@ -1,0 +1,55 @@
+<template>
+    <template lwc:if={record}>
+        <div class="container">
+                <lightning-progress-indicator current-step={ExternalStatus} type="base" variant="base">
+                    <lightning-progress-step label="New" value="New"></lightning-progress-step>
+                    <lightning-progress-step label="In Review" value="In Review"></lightning-progress-step>
+                    <lightning-progress-step label="Waiting on Requester" value="Waiting on Requester"></lightning-progress-step>
+                    <lightning-progress-step label="In Progress" value="In Progress"></lightning-progress-step>
+                    <lightning-progress-step label="Closed" value="Closed"></lightning-progress-step>
+                </lightning-progress-indicator>
+                <lightning-card  variant="Narrow" icon-name="standard:case">
+                    <div slot="title">
+                        <h1 class="slds-card__header-link">{Subject}</h1>
+                    </div>
+                    <lightning-record-view-form
+                record-id={recordId}
+                object-api-name="Case"
+                mode="readonly"
+            >
+                    <div class="slds-theme_default fieldsDisplay">
+                        <span class="slds-form-element__label">Case Number</span>
+                        <div class="slds-form-element__control">
+                          <div class="slds-form-element__static">{CaseNumber}</div>
+                        </div>
+                        <br>
+                        <span class="slds-form-element__label">Description</span>
+                        <div class="slds-form-element__control">
+                          <div class="slds-form-element__static">{Description}</div>
+                        </div>
+                        <br>
+                        <span class="slds-form-element__label">Status</span>
+                        <div class="slds-form-element__control">
+                          <div class="slds-form-element__static">{ExternalStatus}</div>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+                </lightning-card>
+        </div>
+        <div class="emailContainer">
+            <template lwc:if={filteredData}>
+                <template for:each={filteredData} for:item="emailRecord">
+                    <c-new-email-tile 
+                        key={emailRecord.Id} 
+                        record={emailRecord}
+                        subject={emailRecord.Subject}
+                        textbody={emailRecord.TextBody}>
+                    </c-new-email-tile>
+                </template>
+            </template>
+        </div>
+    </template>
+    <template lwc:else>
+        <div class="slds-text-heading_medium">Select a This Dick</div>
+    </template>
+</template>

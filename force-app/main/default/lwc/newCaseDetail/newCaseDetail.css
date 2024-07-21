@@ -1,0 +1,52 @@
+.container {
+  border: 1px rgb(168, 166, 166) solid;
+  border-radius: 5px;
+  background-color: white;
+  margin:5px;
+  padding: 2px;
+  padding-top: 5px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  /* @sldsValidatorIgnore */
+  text-overflow: wrap;
+  /* @sldsValidatorIgnore */
+  white-space: normal;
+  word-wrap:break-word;
+}
+
+.slds-card__header-link {
+  font-weight: bold;
+  overflow-wrap: break-word;    
+  overflow: clip;
+  word-wrap:break-word;
+  /* @sldsValidatorIgnore */
+  text-overflow: wrap;
+  /* @sldsValidatorIgnore */
+  white-space: normal; 
+  /* @sldsValidatorIgnore */
+  text-overflow: ellipsis;
+  /* @sldsValidatorIgnore */
+  white-space: normal;
+}
+
+.emailContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+  /* @sldsValidatorIgnore */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Subject {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.fieldsDisplay{
+  padding-left: 17px;
+  padding-right: 10px;
+}

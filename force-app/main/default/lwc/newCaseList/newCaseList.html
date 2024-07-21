@@ -1,0 +1,13 @@
+<template>
+    <div class="container">
+        <template lwc:if={filteredData}>
+            <template for:each={filteredData} for:item="caseRecord">
+                <c-new-case-tile 
+                    key={caseRecord.Id} 
+                    record={caseRecord} 
+                    ontileclick={handleTileClick}>
+                </c-new-case-tile>
+            </template>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <div class="container">
+        <a onclick={tileClick}>
+            <lightning-card  variant="Narrow" >
+                <div slot="title">
+                    <section class="content">
+                        <main class="main" >
+                            <lightning-icon icon-name="standard:case" class="icon"></lightning-icon>
+                        </main>
+                        <aside class="sidebar-second">
+                            <span class="caseSmall">Case</span>
+                            <h1 class="slds-card__header-link slds-line-clamp_small">{record.Subject}</h1>
+                        </aside>
+                    </section>
+                </div>
+            </lightning-card>
+        </a>
+    </div>
+</template>
